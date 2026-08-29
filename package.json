@@ -1,0 +1,11 @@
+{
+  "name": "chemistry-trainer",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "prepare:data": "node scripts/prepare_data.mjs",
+    "build": "node scripts/build.mjs",
+    "dev": "python3 -m http.server 5173"
+  }
+}
