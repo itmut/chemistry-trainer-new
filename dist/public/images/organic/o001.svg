@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="240" viewBox="0 0 400 240" role="img" aria-label="Метан CH4, структурная формула">
+  <g fill="none" stroke="#202020" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="200" y1="102" x2="200" y2="63"/>
+    <line x1="200" y1="138" x2="200" y2="177"/>
+    <line x1="184" y1="120" x2="139" y2="120"/>
+    <line x1="216" y1="120" x2="261" y2="120"/>
+  </g>
+  <g font-family="Arial, Helvetica, sans-serif" font-size="28" text-anchor="middle" dominant-baseline="middle">
+    <text x="200" y="120" fill="#202020" font-weight="600">C</text>
+    <text x="200" y="45" fill="#5f7d80" font-weight="600">H</text>
+    <text x="200" y="195" fill="#5f7d80" font-weight="600">H</text>
+    <text x="120" y="120" fill="#5f7d80" font-weight="600">H</text>
+    <text x="280" y="120" fill="#5f7d80" font-weight="600">H</text>
+  </g>
+</svg>

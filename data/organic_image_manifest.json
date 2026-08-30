@@ -2369,19 +2369,19 @@
   },
   {
     "id": 149,
-    "formula": "H₂NCOCH₂CH(NH₂)COOH",
+    "formula": "HOOC–CH(NH₂)–CH₂–COOH",
     "name_ru": "аспарагиновая кислота",
     "systematic_ru": "2-аминобутандиовая кислота",
     "synonyms": "aspartic acid",
     "class_ru": "аминокислота",
-    "structure_text": "HOOC–CH(NH₂)–CH₂–CONH₂",
+    "structure_text": "HOOC–CH(NH₂)–CH₂–COOH",
     "pubchem_query": "aspartic acid",
     "image_mode": "pubchem_png",
     "pubchem_png_500": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/aspartic%20acid/PNG?record_type=2d&image_size=500x500",
     "pubchem_search": "https://pubchem.ncbi.nlm.nih.gov/#query=aspartic%20acid",
     "image_filename": "149_aspartic_acid.png",
     "note": "",
-    "validation_note": "Название/систематическое название относятся к аспарагиновой кислоте, но формула и структурная запись в строке похожи на аспарагин. Нужна ручная сверка."
+    "validation_note": "Проверено: аспарагиновая кислота — HOOC–CH(NH₂)–CH₂–COOH, C₄H₇NO₄."
   },
   {
     "id": 150,
@@ -2401,7 +2401,7 @@
   },
   {
     "id": 151,
-    "formula": "HO–C₆H₄–CH(NH₂)–COOH",
+    "formula": "HO–C₆H₄–CH₂–CH(NH₂)–COOH",
     "name_ru": "тирозин",
     "systematic_ru": "2-амино-3-(4-гидроксифенил)пропановая кислота",
     "synonyms": "tyrosine",
@@ -2417,12 +2417,12 @@
   },
   {
     "id": 152,
-    "formula": "C₈H₁₁NO₂",
+    "formula": "C₉H₁₃NO₃",
     "name_ru": "адреналин",
     "systematic_ru": "4-(1-гидрокси-2-(метиламино)этил)бензол-1,2-диол",
     "synonyms": "epinephrine; adrenaline",
     "class_ru": "катехоламин",
-    "structure_text": "катехольное кольцо + β-OH",
+    "structure_text": "3,4-(OH)₂C₆H₃–CH(OH)–CH₂–NHCH₃",
     "pubchem_query": "epinephrine",
     "image_mode": "pubchem_png",
     "pubchem_png_500": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/epinephrine/PNG?record_type=2d&image_size=500x500",
@@ -2433,12 +2433,12 @@
   },
   {
     "id": 153,
-    "formula": "C₈H₉NO₂",
+    "formula": "C₈H₁₁NO₃",
     "name_ru": "норадреналин",
     "systematic_ru": "4-(2-амино-1-гидроксиэтил)бензол-1,2-диол",
     "synonyms": "norepinephrine",
     "class_ru": "катехоламин",
-    "structure_text": "катехольное кольцо + NH₂",
+    "structure_text": "3,4-(OH)₂C₆H₃–CH(OH)–CH₂–NH₂",
     "pubchem_query": "norepinephrine",
     "image_mode": "pubchem_png",
     "pubchem_png_500": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/norepinephrine/PNG?record_type=2d&image_size=500x500",
@@ -2515,7 +2515,7 @@
     "id": 158,
     "formula": "(CH₃)₂NCON(CH₃)₂",
     "name_ru": "тетраметилмочевина",
-    "systematic_ru": "1,3,3,3-тетраметилмочевина",
+    "systematic_ru": "N,N,N′,N′-тетраметилмочевина",
     "synonyms": "tetramethylurea",
     "class_ru": "амид",
     "structure_text": "(CH₃)₂N–CO–N(CH₃)₂",
@@ -2525,7 +2525,7 @@
     "pubchem_search": "https://pubchem.ncbi.nlm.nih.gov/#query=tetramethylurea",
     "image_filename": "158_tetramethylurea.png",
     "note": "",
-    "validation_note": ""
+    "validation_note": "Проверено: N,N,N′,N′-тетраметилмочевина соответствует структуре (CH₃)₂N–CO–N(CH₃)₂."
   },
   {
     "id": 159,
@@ -2675,17 +2675,17 @@
     "id": 168,
     "formula": "O₂N–C₆H₄–NO₂",
     "name_ru": "динитробензол",
-    "systematic_ru": "1,4-динитробензол",
+    "systematic_ru": "1,2-динитробензол",
     "synonyms": "dinitrobenzene",
     "class_ru": "нитроарен",
     "structure_text": "два NO₂ на кольце",
-    "pubchem_query": "1,4-dinitrobenzene",
+    "pubchem_query": "1,2-dinitrobenzene",
     "image_mode": "pubchem_png",
-    "pubchem_png_500": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/1%2C4-dinitrobenzene/PNG?record_type=2d&image_size=500x500",
-    "pubchem_search": "https://pubchem.ncbi.nlm.nih.gov/#query=1%2C4-dinitrobenzene",
-    "image_filename": "168_1_4-dinitrobenzene.png",
+    "pubchem_png_500": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/1%2C2-dinitrobenzene/PNG?record_type=2d&image_size=500x500",
+    "pubchem_search": "https://pubchem.ncbi.nlm.nih.gov/#query=1%2C2-dinitrobenzene",
+    "image_filename": "168_1_2-dinitrobenzene.png",
     "note": "",
-    "validation_note": ""
+    "validation_note": "Структурный рисунок показывает соседние заместители: это 1,2-динитробензол (орто-изомер)."
   },
   {
     "id": 169,
@@ -3137,7 +3137,7 @@
   },
   {
     "id": 197,
-    "formula": "[-O-CH₂-CH(CH₃)-O-CO-C₆H₄-CO-]ₙ",
+    "formula": "[-O–CH(CH₃)–CO–]ₙ",
     "name_ru": "полилактид",
     "systematic_ru": "поли(молочная кислота)",
     "synonyms": "PLA",
@@ -3149,7 +3149,7 @@
     "pubchem_search": "https://pubchem.ncbi.nlm.nih.gov/#query=PLA",
     "image_filename": "197_PLA.png",
     "note": "Для полимеров лучше показывать повторяющееся звено из structure_text; PubChem по названию может вернуть неполезную/неоднозначную карточку.",
-    "validation_note": "Название «полилактид / PLA» не согласуется с формулой повторяющегося звена в исходной колонке формулы; нужна ручная сверка."
+    "validation_note": "Проверено: повторяющееся звено полилактида — [–O–CH(CH₃)–CO–]ₙ, C₃H₄O₂."
   },
   {
     "id": 198,
@@ -3169,7 +3169,7 @@
   },
   {
     "id": 199,
-    "formula": "C₈H₉NO₂",
+    "formula": "C₁₀H₁₃NO₂",
     "name_ru": "фенацетин",
     "systematic_ru": "N-(4-этоксифенил)ацетамид",
     "synonyms": "phenacetin",
@@ -3185,7 +3185,7 @@
   },
   {
     "id": 200,
-    "formula": "C₁₃H₁₈O₂",
+    "formula": "C₁₄H₁₄O₃",
     "name_ru": "напроксен",
     "systematic_ru": "(2S)-2-(6-метоксинафталин-2-ил)пропановая кислота",
     "synonyms": "naproxen",

@@ -18,11 +18,14 @@ const corrections = {
     formula: 'HO–C₆H₄–CH₂–CH(NH₂)–COOH', molecularFormula: 'C₉H₁₁NO₃',
     structure: 'p-HO–C₆H₄–CH₂–CH(NH₂)–COOH', note: 'Добавлен пропущенный фрагмент CH₂.'
   },
-  'organic-152': { molecularFormula: 'C₉H₁₃NO₃', note: 'Молекулярная формула сверена по PubChem.' },
-  'organic-153': { molecularFormula: 'C₈H₁₁NO₃', note: 'Молекулярная формула сверена по PubChem.' },
-  'organic-158': { systematicName: 'N,N,N′,N′-тетраметилмочевина', review: true, note: 'Систематическое имя нормализовано; проверьте выбранный вариант номенклатуры.' },
-  'organic-199': { molecularFormula: 'C₁₀H₁₃NO₂', note: 'Формула сверена со структурой фенacetина.' },
-  'organic-200': { molecularFormula: 'C₁₄H₁₄O₃', note: 'Формула сверена со структурой напроксена.' },
+  'organic-149': { formula: 'HOOC–CH(NH₂)–CH₂–COOH', molecularFormula: 'C₄H₇NO₄', structure: 'HOOC–CH(NH₂)–CH₂–COOH', review: false, note: 'Проверено: аспарагиновая кислота — HOOC–CH(NH₂)–CH₂–COOH, C₄H₇NO₄.' },
+  'organic-152': { formula: 'C₉H₁₃NO₃', molecularFormula: 'C₉H₁₃NO₃', note: 'Молекулярная формула сверена по PubChem.' },
+  'organic-153': { formula: 'C₈H₁₁NO₃', molecularFormula: 'C₈H₁₁NO₃', note: 'Молекулярная формула сверена по PubChem.' },
+  'organic-158': { systematicName: 'N,N,N′,N′-тетраметилмочевина', review: false, note: 'Проверено: N,N,N′,N′-тетраметилмочевина соответствует структуре (CH₃)₂N–CO–N(CH₃)₂.' },
+  'organic-168': { systematicName: '1,2-динитробензол', note: 'Структурный рисунок показывает соседние заместители: это 1,2-динитробензол (орто-изомер).' },
+  'organic-197': { formula: '[-O–CH(CH₃)–CO–]ₙ', molecularFormula: 'повторяющееся звено: C₃H₄O₂', structure: '–O–CH(CH₃)–CO–ₙ', review: false, note: 'Проверено: повторяющееся звено полилактида — [–O–CH(CH₃)–CO–]ₙ, C₃H₄O₂.' },
+  'organic-199': { formula: 'C₁₀H₁₃NO₂', molecularFormula: 'C₁₀H₁₃NO₂', note: 'Формула сверена со структурой фенацетина.' },
+  'organic-200': { formula: 'C₁₄H₁₄O₃', molecularFormula: 'C₁₄H₁₄O₃', note: 'Формула сверена со структурой напроксена.' },
   'inorganic-025': { aliases: ['сухой лёд'] },
   'inorganic-031': { aliases: ['веселящий газ'] },
   'inorganic-040': { aliases: ['железная окалина'] },
@@ -41,7 +44,7 @@ const makeRows = (sheet, type) => sheet.values.slice(4).filter(row => row?.[0]).
   const manifestPatch = {};
   if (manifest?.validation_note?.includes('C₂H₄O')) { manifestPatch.formula = 'C₂H₄O'; manifestPatch.molecularFormula = 'C₂H₄O'; }
   if (id === 'organic-149') { manifestPatch.formula = 'HOOC–CH(NH₂)–CH₂–COOH'; manifestPatch.molecularFormula = 'C₄H₇NO₄'; manifestPatch.structure = 'HOOC–CH(NH₂)–CH₂–COOH'; }
-  if (id === 'organic-197') { manifestPatch.formula = '–O–CH(CH₃)–CO–ₙ'; manifestPatch.molecularFormula = 'повторяющееся звено: C₃H₄O₂'; manifestPatch.structure = '–O–CH(CH₃)–CO–ₙ'; manifestPatch.review = true; }
+  if (id === 'organic-197') { manifestPatch.formula = '[-O–CH(CH₃)–CO–]ₙ'; manifestPatch.molecularFormula = 'повторяющееся звено: C₃H₄O₂'; manifestPatch.structure = '–O–CH(CH₃)–CO–ₙ'; manifestPatch.review = true; }
   return {
     id, number: row[0], type,
     formula: manifestPatch.formula ?? patch.formula ?? normalize(row[1]),
@@ -58,8 +61,8 @@ const makeRows = (sheet, type) => sheet.values.slice(4).filter(row => row?.[0]).
     image: '',
     imageUrl: manifest?.pubchem_png_500 ?? '',
     imageMode: manifest?.image_mode ?? '',
-    review: Boolean(patch.review || manifestPatch.review || manifest?.validation_note),
-    auditNote: [patch.note, manifest?.validation_note].filter(Boolean).join(' ')
+    review: patch.review !== undefined ? Boolean(patch.review) : Boolean(manifestPatch.review || manifest?.validation_note),
+    auditNote: patch.note ?? manifest?.validation_note ?? ''
   };
 });
 
@@ -82,6 +85,25 @@ const digits = value => String(value ?? '').replace(/[₀-₉]/g, c => String('�
 const compact = value => digits(value).toLowerCase().replace(/[^a-zа-я0-9]/gi, '');
 let matchedReference = 0;
 const unmatchedReference = [];
+const referenceClasses = {
+  'криолит': 'комплексная соль', 'пирит': 'сульфид', 'карбид кальция': 'карбид',
+  'карбид алюминия': 'карбид', 'карборунд': 'карбид', 'синтез газ': 'смесь газов',
+  'известковая вода': 'основание', 'известковое молоко': 'основание', 'олеум': 'кислотная смесь',
+  'хромовый ангидрид': 'кислотный оксид', 'марганцевый ангидрид': 'кислотный оксид',
+  'молочная кислота': 'гидроксикислота', 'акриловая кислота': 'карбоновая кислота',
+  'н-бутан': 'алкан', 'изобутан': 'алкан', 'н-пентан': 'алкан', 'изопентан': 'алкан',
+  'дивинил': 'диен', 'хлоропрен': 'галогендиен', 'винилацетилен': 'енин',
+  'мета-ксилол': 'арен', 'орто-ксилол': 'арен', 'пара-ксилол': 'арен',
+  'изопропил': 'углеводородный радикал', 'винил': 'углеводородный радикал',
+  'фенил': 'углеводородный радикал', 'бензил': 'углеводородный радикал',
+  'втор-бутил': 'углеводородный радикал', 'изобутил': 'углеводородный радикал',
+  'н-бутил': 'углеводородный радикал', 'трет-бутил': 'углеводородный радикал',
+  'бензиловый спирт': 'спирт', 'капрон': 'полиамид', 'фенилаланин': 'аминокислота',
+  'формиат': 'карбоксилат-ион', 'ацетат': 'карбоксилат-ион', 'пропионат': 'карбоксилат-ион',
+  'бутират': 'карбоксилат-ион', 'акрилат': 'карбоксилат-ион', 'бензоат': 'карбоксилат-ион',
+  'пальмитат': 'карбоксилат-ион', 'стеарат': 'карбоксилат-ион', 'олеат': 'карбоксилат-ион',
+  'линолеат': 'карбоксилат-ион', 'оксалат': 'дикарбоксилат-ион', 'адипинат': 'дикарбоксилат-ион'
+};
 for (const ref of refItems) {
   const byName = cards.find(card => card.type === ref.type && ref.names.some(name => {
     const n = compact(name); return n && [card.trivialName, card.systematicName, ...card.aliases].some(v => compact(v) === n);
@@ -98,7 +120,7 @@ for (const [index, ref] of unmatchedReference.entries()) {
   cards.push({
     id, number: index + 1, type: ref.type, formula: ref.formula, molecularFormula: '',
     trivialName: ref.names[0], systematicName: '', aliases: ref.names.slice(1),
-    className: 'карточка из базового тренажёра', structure: '—', appearance: '—', uses: '—',
+    className: referenceClasses[ref.names[0]] || 'требует классификации', structure: '—', appearance: '—', uses: '—',
     examNote: 'Материал из исходного референса; дополните и проверьте при расширении набора.', sourceUrl: 'https://scienceforyou.ru/trivialnye-nazvaniya-veschestv',
     image: '', review: true, referenceOnly: true, auditNote: 'Добавлено из базового тренажёра.'
   });

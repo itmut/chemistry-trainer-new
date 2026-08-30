@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="240" viewBox="0 0 400 240" role="img" aria-label="нейлон-6,6 (C12H22N2O2)n">
+<g fill="none" stroke="#202020" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<path d="M24 34 H14 V206 H24"/><path d="M376 34 H386 V206 H376"/>
+<line x1="33" y1="120" x2="52" y2="120" stroke="#0057C8"/>
+<line x1="76" y1="120" x2="92" y2="120" stroke="#0057C8"/>
+<line x1="150" y1="120" x2="165" y2="120"/>
+<line x1="190" y1="120" x2="205" y2="120" stroke="#0057C8"/>
+<line x1="218" y1="120" x2="232" y2="120"/>
+<line x1="238" y1="117" x2="238" y2="76" stroke="#DB0000"/>
+<line x1="244" y1="117" x2="244" y2="76" stroke="#DB0000"/>
+<line x1="250" y1="120" x2="263" y2="120"/>
+<line x1="320" y1="120" x2="334" y2="120"/>
+<line x1="340" y1="117" x2="340" y2="76" stroke="#DB0000"/>
+<line x1="346" y1="117" x2="346" y2="76" stroke="#DB0000"/>
+<line x1="352" y1="120" x2="370" y2="120"/>
+</g>
+<g font-family="Arial,Helvetica,sans-serif" dominant-baseline="middle" text-anchor="middle">
+<text x="64" y="120" font-size="16" font-weight="600" fill="#0057C8">NH</text>
+<text x="121" y="120" font-size="14" fill="#202020">(CH₂)₆</text>
+<text x="178" y="120" font-size="16" font-weight="600" fill="#0057C8">NH</text>
+<text x="241" y="120" font-size="16" font-weight="600" fill="#202020">C</text>
+<text x="241" y="61" font-size="17" font-weight="600" fill="#DB0000">O</text>
+<text x="291" y="120" font-size="14" fill="#202020">(CH₂)₄</text>
+<text x="343" y="120" font-size="16" font-weight="600" fill="#202020">C</text>
+<text x="343" y="61" font-size="17" font-weight="600" fill="#DB0000">O</text>
+<text x="374" y="220" font-size="17" text-anchor="start" fill="#202020">n</text>
+</g></svg>

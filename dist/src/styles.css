@@ -103,6 +103,40 @@
   .card-facts em{font-size:9px;margin-bottom:4px}
 }
 
+/* compact catalog and balanced full-screen trainer */
+.catalog-topbar{gap:12px;margin-bottom:8px}
+.catalog-heading h1{letter-spacing:-.045em}
+.catalog-controls{gap:6px;margin-bottom:7px}
+.catalog-tabs{gap:5px;margin-bottom:9px}
+.catalog-tab{padding:8px 12px}
+.catalog-grid{gap:10px;max-height:calc(100svh - 174px);padding-top:1px}
+.catalog-card{padding:9px;border-radius:15px}
+.catalog-name{margin-top:7px;font-size:13px}
+.catalog-card small{margin-top:4px}
+.structure-visual.compact{height:148px;min-height:148px}
+.structure-visual.compact img{height:132px}
+.structure-visual.compact .image-fallback{min-height:132px}
+
+.quiz-card{min-height:0}
+.quiz-visual{flex:1 1 auto;min-height:clamp(360px,46svh,560px)}
+.quiz-visual .structure-visual{height:100%;min-height:0}
+.quiz-visual .image-frame img{height:100%;max-height:100%}
+.quiz-visual .formula-frame,.quiz-visual .name-frame{min-height:0}
+.formula-answer{text-transform:uppercase;letter-spacing:.035em;font-family:"SFMono-Regular",Consolas,monospace}
+.image-frame img{filter:contrast(1.18) saturate(.9);image-rendering:auto}
+.catalog-card .image-frame img{filter:contrast(1.12) saturate(.9)}
+
+@media(max-width:760px){
+  .catalog-grid{gap:8px;max-height:none}
+  .catalog-card{padding:7px}
+  .structure-visual.compact{height:128px;min-height:128px}
+  .structure-visual.compact img{height:112px}
+  .structure-visual.compact .image-fallback{min-height:112px}
+  .quiz-visual{flex:0 0 auto;min-height:240px}
+  .quiz-visual .structure-visual{height:auto;min-height:240px}
+  .quiz-visual .image-frame img{height:218px;max-height:none}
+}
+
 /* shared navigation and spacing pass */
 .back-btn{position:absolute;top:20px;left:0;z-index:3;min-width:76px;padding:10px 12px;border:1px solid var(--line);border-radius:11px;background:rgba(255,253,247,.58);text-align:center;font-size:13px;line-height:1;font-weight:800;box-shadow:0 4px 12px rgba(54,71,49,.06)}
 .back-btn:hover{background:var(--paper);border-color:var(--accent);color:var(--ink)}
@@ -133,4 +167,712 @@
   .mode-category{font-size:17px;margin-bottom:3px}
   .session-header>.back-btn{top:0;left:0}
   .completion-screen>.back-btn{top:14px;left:14px}
+}
+
+/* content and formula readability */
+.catalog-topbar{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:18px;margin:0 0 12px}
+.catalog-topbar>.back-btn{position:static;justify-self:start}
+.catalog-topbar .catalog-heading{margin:0;min-width:0;align-items:center}
+.catalog-topbar .catalog-heading h1{font-size:clamp(32px,4vw,46px)}
+.catalog-controls{grid-template-columns:minmax(0,1fr) 160px}
+.catalog-controls.organic{grid-template-columns:minmax(0,1fr) 160px 190px}
+.formula-frame strong{letter-spacing:-.035em}
+.formula-frame strong sub,.repeat-unit strong sub{font-size:.58em;line-height:0;vertical-align:-.34em;letter-spacing:0}
+.structure-visual.compact.formula-frame strong{font-size:clamp(22px,2.8vw,34px);line-height:1.18}
+.structure-visual.compact .image-fallback b{font-size:clamp(21px,2.8vw,32px)}
+.image-frame img{filter:grayscale(1) contrast(1.22)}
+.repeat-unit strong{font-size:clamp(18px,2.5vw,29px)}
+.quiz-visual .formula-frame{min-height:240px;padding:24px}
+.quiz-visual .formula-frame strong{font-size:clamp(38px,5.5vw,72px);line-height:1.12}
+.quiz-visual .formula-frame>span{font-size:10px}
+.quiz-visual .formula-frame small{font-size:13px}
+
+@media(max-width:760px){
+  .catalog-topbar{gap:10px;margin-bottom:10px}
+  .catalog-topbar .catalog-heading h1{font-size:clamp(28px,9vw,36px)}
+  .catalog-topbar .catalog-heading .eyebrow{font-size:10px}
+  .catalog-controls,.catalog-controls.organic{display:flex;flex-direction:column;gap:6px}
+  .structure-visual.compact.formula-frame strong{font-size:clamp(19px,5.8vw,27px)}
+  .structure-visual.compact .image-fallback b{font-size:clamp(19px,5.8vw,27px)}
+  .repeat-unit strong{font-size:clamp(16px,4.8vw,23px)}
+  .quiz-visual .formula-frame{min-height:188px;padding:18px 14px}
+  .quiz-visual .formula-frame strong{font-size:clamp(30px,10vw,50px)}
+}
+
+/* final overrides: tighter content and no dead space in full-screen sessions */
+.catalog-topbar{gap:12px;margin-bottom:8px}
+.catalog-controls{gap:6px;margin-bottom:7px}
+.catalog-tabs{gap:5px;margin-bottom:9px}
+.catalog-tab{padding:8px 12px}
+.catalog-grid{gap:10px;max-height:calc(100svh - 174px);padding-top:1px}
+.catalog-card{padding:9px;border-radius:15px}
+.catalog-name{margin-top:7px;font-size:13px}
+.catalog-card small{margin-top:4px}
+.structure-visual.compact{height:148px;min-height:148px}
+.structure-visual.compact img{height:132px}
+.structure-visual.compact .image-fallback{min-height:132px}
+.quiz-card{min-height:0}
+.quiz-visual{flex:1 1 auto;min-height:clamp(360px,46svh,560px)}
+.quiz-visual .structure-visual{height:100%;min-height:0}
+.quiz-visual .image-frame img{height:100%;max-height:100%}
+.quiz-visual .formula-frame,.quiz-visual .name-frame{min-height:0}
+.formula-answer{text-transform:uppercase;letter-spacing:.035em;font-family:"SFMono-Regular",Consolas,monospace}
+.image-frame img{filter:contrast(1.18) saturate(.9);image-rendering:auto}
+.catalog-card .image-frame img{filter:contrast(1.12) saturate(.9)}
+@media(max-width:760px){
+  .catalog-grid{gap:8px;max-height:none}
+  .catalog-card{padding:7px}
+  .structure-visual.compact{height:128px;min-height:128px}
+  .structure-visual.compact img{height:112px}
+  .structure-visual.compact .image-fallback{min-height:112px}
+  .quiz-visual{flex:0 0 auto;min-height:240px}
+  .quiz-visual .structure-visual{height:auto;min-height:240px}
+  .quiz-visual .image-frame img{height:218px;max-height:none}
+}
+
+/* 2026-08 fit-and-clarity pass: keep trainer stage static, fit all structure images inside it,
+   remove picture frames, and improve clarity without manual zoom. */
+:root{
+  --trainer-structure-stage: clamp(250px, 42svh, 430px);
+  --trainer-structure-stage-mobile: 240px;
+  --catalog-structure-stage: 148px;
+  --catalog-structure-stage-mobile: 128px;
+}
+
+/* Only picture cards lose their decorative frame. Formula/text cards keep their styling. */
+.structure-visual.image-frame,
+.catalog-card .structure-visual.image-frame,
+.quiz-visual .structure-visual.image-frame{
+  border-color: transparent;
+  background: transparent;
+  box-shadow: none;
+}
+
+.image-frame{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  overflow:hidden;
+  padding:10px;
+}
+
+.quiz-visual .structure-visual.image-frame{
+  width:min(100%, 760px);
+  height:var(--trainer-structure-stage);
+  min-height:var(--trainer-structure-stage);
+  padding:12px 10px 14px;
+}
+
+.catalog-card .structure-visual.image-frame{
+  height:var(--catalog-structure-stage);
+  min-height:var(--catalog-structure-stage);
+  padding:6px;
+}
+
+/* Let the image keep its real proportions and simply fit inside the static stage. */
+.image-frame img,
+.quiz-visual .image-frame img,
+.catalog-card .image-frame img,
+.structure-visual.compact img{
+  display:block;
+  width:auto !important;
+  height:auto !important;
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;
+  transform:none !important;
+  border-radius:0;
+  background:transparent;
+  mix-blend-mode:normal;
+  filter:brightness(.985) contrast(1.06);
+  image-rendering:-webkit-optimize-contrast;
+  image-rendering:crisp-edges;
+}
+
+/* Prevent the trainer from growing because of a large source image. */
+.quiz-card,
+.quiz-visual,
+.quiz-visual .structure-visual{
+  overflow:hidden;
+}
+
+/* Keep fallback formulas aligned with the same fixed stage. */
+.quiz-visual .structure-visual:not(.image-frame){
+  min-height:var(--trainer-structure-stage);
+}
+
+@media(max-width:760px){
+  .quiz-visual .structure-visual.image-frame{
+    height:var(--trainer-structure-stage-mobile);
+    min-height:var(--trainer-structure-stage-mobile);
+    padding:8px;
+  }
+
+  .catalog-card .structure-visual.image-frame,
+  .structure-visual.compact.image-frame{
+    height:var(--catalog-structure-stage-mobile);
+    min-height:var(--catalog-structure-stage-mobile);
+    padding:4px;
+  }
+
+  .quiz-visual .structure-visual:not(.image-frame){
+    min-height:var(--trainer-structure-stage-mobile);
+  }
+}
+
+/* ========================================================================== */
+/* v7 restoration / mobile polish                                             */
+/* Full-resolution original organic PNGs are kept. No raster reprocessing.    */
+/* ========================================================================== */
+:root{
+  --trainer-stage-final: clamp(360px, 48svh, 520px);
+  --trainer-stage-final-mobile: clamp(292px, 37svh, 340px);
+  --catalog-stage-final: 164px;
+  --catalog-stage-final-mobile: 146px;
+  --formula-ink: #303330;
+}
+
+/* Keep the trainer geometry stable: source image dimensions never resize it. */
+.quiz-card{
+  overflow:hidden;
+}
+.quiz-visual{
+  flex:0 0 var(--trainer-stage-final);
+  min-height:var(--trainer-stage-final);
+  padding:20px 30px 16px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.quiz-visual .structure-visual,
+.quiz-visual .structure-visual.image-frame,
+.quiz-visual .structure-visual.formula-frame,
+.quiz-visual .structure-visual.name-frame,
+.quiz-visual .structure-visual.repeat-frame{
+  width:min(100%, 860px);
+  height:100%;
+  min-height:0;
+  max-height:100%;
+  margin:0 auto;
+  padding:12px 14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* Images merge with the stage; original high-resolution pixels stay intact. */
+.structure-visual.image-frame,
+.catalog-card .structure-visual.image-frame,
+.quiz-visual .structure-visual.image-frame{
+  border:0;
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
+  overflow:hidden;
+}
+.image-frame img,
+.quiz-visual .image-frame img,
+.catalog-card .image-frame img,
+.structure-visual.compact img{
+  display:block;
+  width:auto!important;
+  height:auto!important;
+  max-width:96%;
+  max-height:96%;
+  margin:auto;
+  object-fit:contain;
+  object-position:center center;
+  transform:none!important;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  /* Neutralise coloured atom text without boosting stroke weight. */
+  filter:grayscale(1) brightness(1.025)!important;
+  opacity:1;
+  mix-blend-mode:multiply!important;
+  image-rendering:auto!important;
+}
+
+/* Formula/name screens stay centred and readable, not small or distant. */
+.quiz-visual .formula-frame,
+.quiz-visual .name-frame,
+.quiz-visual .repeat-frame{
+  border:0;
+  background:transparent;
+  box-shadow:none;
+  text-align:center;
+  gap:10px;
+}
+.structure-visual strong,
+.formula-frame strong,
+.repeat-unit strong{
+  color:var(--formula-ink);
+  font-weight:500;
+}
+.quiz-visual .formula-frame strong{
+  max-width:100%;
+  font-size:clamp(40px,5.8vw,70px);
+  line-height:1.14;
+  letter-spacing:-.025em;
+  overflow-wrap:anywhere;
+}
+.name-frame strong{
+  max-width:860px;
+  font-family:inherit;
+  font-size:clamp(31px,4.7vw,52px);
+  line-height:1.12;
+  font-weight:600;
+  letter-spacing:-.035em;
+  color:var(--formula-ink);
+}
+.name-frame>span,
+.formula-frame>span{
+  font-weight:700;
+}
+.formula-frame strong sub,
+.repeat-unit strong sub,
+.answer-formula-reveal strong sub{
+  font-size:.58em;
+  line-height:0;
+  vertical-align:-.34em;
+  letter-spacing:0;
+}
+
+/* Do not force formula input to uppercase; lowercase input is accepted. */
+.formula-answer{
+  text-transform:none!important;
+  letter-spacing:0!important;
+  font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;
+  font-weight:400!important;
+}
+
+/* Answer block: only inserted by JS for organic / "by name" mode. */
+.formula-reveal-slot{min-height:0}
+.answer-formula-reveal{
+  margin-top:10px;
+  padding:11px 14px 12px;
+  border:1px solid rgba(85,93,77,.14);
+  border-radius:13px;
+  background:rgba(255,255,255,.48);
+  text-align:left;
+}
+.answer-formula-reveal em{
+  display:block;
+  margin-bottom:4px;
+  color:var(--muted);
+  font-size:9px;
+  font-style:normal;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.answer-formula-reveal strong{
+  display:block;
+  color:var(--formula-ink);
+  font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;
+  font-size:clamp(25px,3.8vw,38px);
+  font-weight:400;
+  line-height:1.18;
+  letter-spacing:-.02em;
+  overflow-wrap:anywhere;
+}
+.answer-formula-reveal small{
+  display:block;
+  margin-top:5px;
+  color:#666b65;
+  font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;
+  font-size:13px;
+  font-weight:400;
+}
+.feedback{
+  margin-top:9px;
+  min-height:22px;
+  font-size:13px;
+  font-weight:500;
+}
+.feedback strong{font-weight:600}
+
+/* Bring the description closer and make it readable again. */
+.quiz-copy{
+  padding:21px 34px 27px;
+}
+.card-facts{
+  gap:9px;
+  margin-top:12px;
+}
+.card-facts span{
+  padding:11px 12px;
+  font-size:12.5px;
+  line-height:1.4;
+}
+.card-facts em{
+  margin-bottom:4px;
+  font-size:9px;
+}
+
+/* Content: roomier cards, clear separation between drawing/formula and name. */
+.catalog-grid{
+  gap:15px;
+  padding-top:3px;
+}
+.catalog-card{
+  padding:12px;
+}
+.catalog-card .structure-visual.compact{
+  height:var(--catalog-stage-final);
+  min-height:var(--catalog-stage-final);
+  padding:8px;
+}
+.catalog-card .image-frame img{
+  max-width:98%;
+  max-height:98%;
+}
+.catalog-name{
+  margin-top:12px;
+  font-size:14px;
+  font-weight:700;
+  line-height:1.24;
+}
+.catalog-card small{
+  margin-top:6px;
+  font-size:10.5px;
+  line-height:1.35;
+}
+
+/* Content ONLY: bond dashes sit higher; polymer n is a neat lower index. */
+.catalog-formula strong,
+.catalog-repeat strong,
+.catalog-card .formula-frame strong{
+  color:var(--formula-ink);
+  font-weight:400;
+}
+.catalog-bond{
+  position:relative;
+  top:-.09em;
+  display:inline-block;
+  margin:0 .015em;
+  font-weight:300;
+  transform:scaleX(.90);
+}
+.polymer-index{
+  font-size:.56em!important;
+  line-height:0;
+  vertical-align:-.43em!important;
+  margin-left:.04em;
+  font-weight:400!important;
+}
+.catalog-repeat .polymer-index{
+  align-self:flex-end;
+  margin:0 0 14px 1px;
+}
+.catalog-formula.formula-long strong{font-size:clamp(18px,2.25vw,27px)}
+.catalog-formula.formula-xlong strong{font-size:clamp(16px,1.95vw,23px)}
+
+@media(max-width:760px){
+  .trainer-screen{
+    padding:12px 12px 14px;
+  }
+  .session-header{
+    gap:7px;
+  }
+  .session-progress{
+    margin:10px 0 6px;
+  }
+  .quiz-card{
+    border-radius:20px;
+  }
+  .quiz-visual{
+    flex-basis:var(--trainer-stage-final-mobile);
+    min-height:var(--trainer-stage-final-mobile);
+    padding:10px 8px 8px;
+  }
+  .quiz-visual .structure-visual,
+  .quiz-visual .structure-visual.image-frame,
+  .quiz-visual .structure-visual.formula-frame,
+  .quiz-visual .structure-visual.name-frame,
+  .quiz-visual .structure-visual.repeat-frame{
+    width:100%;
+    height:100%;
+    min-height:0;
+    padding:8px 6px;
+  }
+  .image-frame img,
+  .quiz-visual .image-frame img{
+    max-width:98%;
+    max-height:98%;
+  }
+  .name-frame strong{
+    font-size:clamp(29px,9vw,42px);
+    line-height:1.08;
+    font-weight:600;
+  }
+  .quiz-visual .formula-frame strong{
+    font-size:clamp(34px,10.5vw,54px);
+    line-height:1.1;
+  }
+  .quiz-copy{
+    padding:15px 13px 18px;
+  }
+  .quiz-copy form{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:7px;
+  }
+  .quiz-copy input{
+    grid-column:1/-1;
+    min-width:0;
+    min-height:44px;
+    padding:10px 11px;
+    font-size:16px;
+  }
+  .check-btn,.skip-btn,.next-btn{
+    min-height:42px;
+    justify-content:center;
+    padding:0 12px;
+  }
+  .next-btn{grid-column:1/-1}
+  .feedback{
+    margin-top:8px;
+    font-size:12.5px;
+  }
+  .answer-formula-reveal{
+    margin-top:8px;
+    padding:10px 11px;
+  }
+  .answer-formula-reveal strong{
+    font-size:clamp(23px,7.2vw,31px);
+  }
+  .answer-formula-reveal small{
+    font-size:11px;
+  }
+  .card-facts{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:7px;
+    margin-top:10px;
+  }
+  .card-facts span{
+    padding:9px 9px;
+    font-size:11px;
+    line-height:1.35;
+  }
+  .card-facts em{
+    font-size:8px;
+  }
+  .card-facts span:last-child{
+    grid-column:1/-1;
+  }
+
+  .catalog-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:12px;
+  }
+  .catalog-card{
+    padding:10px;
+  }
+  .catalog-card .structure-visual.compact{
+    height:var(--catalog-stage-final-mobile);
+    min-height:var(--catalog-stage-final-mobile);
+    padding:7px;
+  }
+  .catalog-name{
+    margin-top:10px;
+    font-size:13px;
+  }
+  .catalog-card small{
+    margin-top:5px;
+    font-size:10px;
+  }
+  .catalog-bond{top:-.09em;transform:scaleX(.88)}
+  .catalog-repeat .polymer-index{margin-bottom:11px}
+}
+
+@media(max-width:390px){
+  :root{--trainer-stage-final-mobile:clamp(276px,35svh,318px)}
+  .session-stats{gap:9px;font-size:10px}
+  .session-stats b{font-size:13px}
+  .ghost-btn{padding:7px 7px;font-size:9.5px}
+  .quiz-copy{padding:13px 11px 16px}
+  .card-facts span{font-size:10.5px}
+}
+
+/* Keep the enlarged mobile stage from covering the answer/details area. */
+.quiz-copy{
+  flex:1 1 auto;
+  min-height:0;
+  overflow:auto;
+  overscroll-behavior:contain;
+}
+
+/* Organic training has a dedicated drawing mode beside the two text modes. */
+.mode-grid.three-modes{
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  width:min(920px,100%);
+  max-width:920px;
+}
+
+/* Formula cards are deliberately text-only and a little larger for quick
+   scanning. The drawing mode owns all structure images. */
+.quiz-visual .formula-only-frame{
+  border:0;
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
+  padding:12px 18px;
+}
+.quiz-visual .formula-only-frame strong{
+  font-size:clamp(52px,6.5vw,82px);
+  line-height:1.08;
+  letter-spacing:-.03em;
+}
+.quiz-visual .formula-only-frame.formula-long strong{
+  font-size:clamp(42px,5.3vw,68px);
+}
+.quiz-visual .formula-only-frame.formula-xlong strong{
+  font-size:clamp(34px,4.3vw,56px);
+}
+
+/* The new organic assets are transparent SVG/PNG drawings. Keep them crisp,
+   centred and free from the old white picture frame and grayscale treatment. */
+.structure-visual.image-frame,
+.catalog-card .structure-visual.image-frame,
+.quiz-visual .structure-visual.image-frame{
+  border:0;
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
+}
+.image-frame img,
+.quiz-visual .image-frame img,
+.catalog-card .image-frame img,
+.structure-visual.compact img{
+  max-width:100%;
+  max-height:100%;
+  width:auto!important;
+  height:auto!important;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  filter:none!important;
+  mix-blend-mode:normal!important;
+  image-rendering:auto!important;
+}
+
+/* Make formulas in the Content screen easier to read without changing the
+   compact card grid. Long formulas scale down only when necessary. */
+.catalog-card .structure-visual.compact.formula-frame strong,
+.catalog-card .structure-visual.compact .image-fallback b{
+  font-size:clamp(24px,3vw,36px);
+  line-height:1.14;
+}
+.catalog-card .catalog-formula.formula-long strong{font-size:clamp(22px,2.6vw,32px)}
+.catalog-card .catalog-formula.formula-xlong strong{font-size:clamp(19px,2.25vw,27px)}
+
+@media(max-width:760px){
+  .mode-grid.three-modes{grid-template-columns:1fr;max-width:430px}
+  .quiz-visual .formula-only-frame strong{font-size:clamp(40px,11vw,58px)}
+  .quiz-visual .formula-only-frame.formula-long strong{font-size:clamp(33px,9vw,48px)}
+  .quiz-visual .formula-only-frame.formula-xlong strong{font-size:clamp(28px,7.8vw,42px)}
+  .catalog-card .structure-visual.compact.formula-frame strong,
+  .catalog-card .structure-visual.compact .image-fallback b{font-size:clamp(21px,6.3vw,30px)}
+  .catalog-card .catalog-formula.formula-long strong{font-size:clamp(19px,5.4vw,26px)}
+  .catalog-card .catalog-formula.formula-xlong strong{font-size:clamp(17px,4.8vw,23px)}
+}
+
+/* Keep the Content heading truly centred while the back button stays at the
+   edge, and tighten the surrounding rhythm a little. */
+.catalog-topbar{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  margin-bottom:6px;
+}
+.catalog-topbar>.back-btn{
+  position:absolute;
+  left:0;
+  top:0;
+}
+.catalog-topbar .catalog-heading{
+  position:relative;
+  display:block;
+  width:100%;
+  margin:0;
+  text-align:center;
+}
+.catalog-topbar .catalog-heading>div{width:100%;text-align:center}
+.catalog-topbar .catalog-count{
+  position:absolute;
+  top:50%;
+  right:0;
+  transform:translateY(-50%);
+}
+.catalog-controls{margin-bottom:5px}
+.catalog-tabs{margin-bottom:6px}
+.catalog-grid{gap:10px}
+.catalog-card{padding:8px}
+.catalog-formula-line{
+  margin-top:5px;
+  color:var(--formula-ink, #53664f);
+  font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;
+  font-size:clamp(14px,1.6vw,18px);
+  line-height:1.15;
+  overflow-wrap:anywhere;
+}
+.catalog-formula-line sub{font-size:.62em;line-height:0;vertical-align:-.28em}
+
+/* After a drawing answer, keep both useful facts together without touching
+   the prompt itself. */
+.answer-reveal-slot{min-height:0}
+.drawing-answer-reveal{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:8px;
+  margin-top:8px;
+}
+.drawing-answer-reveal>div{
+  padding:10px 12px;
+  border-radius:11px;
+  background:rgba(255,255,255,.48);
+}
+.drawing-answer-reveal em{
+  display:block;
+  margin-bottom:4px;
+  color:var(--muted);
+  font-size:9px;
+  font-style:normal;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.drawing-answer-reveal strong{
+  display:block;
+  color:var(--formula-ink);
+  font-size:clamp(17px,2.2vw,24px);
+  font-weight:600;
+  line-height:1.2;
+  overflow-wrap:anywhere;
+}
+.drawing-answer-reveal>div:last-child strong{
+  font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;
+  font-weight:400;
+}
+.feedback.bad strong{font-weight:600}
+
+/* Avoid layout work for off-screen catalog cards on long lists. */
+.catalog-card{content-visibility:auto;contain-intrinsic-size:190px}
+
+@media(max-width:760px){
+  .catalog-topbar{margin-bottom:5px}
+  .catalog-topbar .catalog-heading{gap:8px}
+  .catalog-topbar .catalog-heading h1{font-size:clamp(29px,8.6vw,36px)}
+  .catalog-count{font-size:10px}
+  .catalog-controls{margin-bottom:4px}
+  .catalog-tabs{margin-bottom:5px}
+  .catalog-grid{gap:8px}
+  .catalog-card{padding:7px}
+  .catalog-formula-line{font-size:clamp(13px,3.8vw,17px)}
+  .drawing-answer-reveal{grid-template-columns:1fr;gap:6px}
+  .drawing-answer-reveal>div{padding:9px 10px}
 }

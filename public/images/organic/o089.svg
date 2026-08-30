@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='iso-8859-1'?>
+<svg version='1.1' baseProfile='full'
+              xmlns='http://www.w3.org/2000/svg'
+                      xmlns:rdkit='http://www.rdkit.org/xml'
+                      xmlns:xlink='http://www.w3.org/1999/xlink'
+                  xml:space='preserve'
+width='400px' height='240px' viewBox='0 0 400 240'>
+<!-- END OF HEADER -->
+<path class='bond-0 atom-0 atom-1' d='M 56.1,129.5 L 155.5,87.2' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-1 atom-1 atom-2' d='M 155.5,87.2 L 241.8,152.2' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-2 atom-2 atom-3' d='M 241.8,152.2 L 286.8,133.0' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-2 atom-2 atom-3' d='M 286.8,133.0 L 331.8,113.9' style='fill:none;fill-rule:evenodd;stroke:#DB0000;stroke-width:1.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-2 atom-2 atom-3' d='M 244.1,133.6 L 280.5,118.1' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-2 atom-2 atom-3' d='M 280.5,118.1 L 325.5,99.0' style='fill:none;fill-rule:evenodd;stroke:#DB0000;stroke-width:1.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path d='M 150.5,89.3 L 155.5,87.2 L 159.8,90.5' style='fill:none;stroke:#000000;stroke-width:1.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;' />
+<path d='M 237.5,148.9 L 241.8,152.2 L 244.1,151.2' style='fill:none;stroke:#000000;stroke-width:1.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;' />
+<path class='atom-3' d='M 332.2 102.5
+Q 332.2 99.4, 333.7 97.7
+Q 335.2 96.0, 338.1 96.0
+Q 340.9 96.0, 342.4 97.7
+Q 343.9 99.4, 343.9 102.5
+Q 343.9 105.5, 342.4 107.3
+Q 340.8 109.1, 338.1 109.1
+Q 335.2 109.1, 333.7 107.3
+Q 332.2 105.6, 332.2 102.5
+M 338.1 107.6
+Q 340.0 107.6, 341.0 106.3
+Q 342.1 105.0, 342.1 102.5
+Q 342.1 99.9, 341.0 98.7
+Q 340.0 97.4, 338.1 97.4
+Q 336.1 97.4, 335.0 98.7
+Q 334.0 99.9, 334.0 102.5
+Q 334.0 105.0, 335.0 106.3
+Q 336.1 107.6, 338.1 107.6
+' fill='#DB0000'/>
+</svg>
